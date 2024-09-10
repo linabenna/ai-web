@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/ai-web/static/css/main.af4125c4.css",
+    "main.js": "/ai-web/static/js/main.becaf067.js",
+    "static/media/3.png": "/ai-web/static/media/3.9b4c11023da352b0a810.png",
+    "static/media/backgroundVideo.mp4": "/ai-web/static/media/backgroundVideo.6a94b8b1f33783ac2e1f.mp4",
+    "static/media/bckgrndSide.png": "/ai-web/static/media/bckgrndSide.56a465701c2bcdbf1d65.png",
+    "static/media/2.png": "/ai-web/static/media/2.928718b3c18e95ed084f.png",
+    "static/media/ai-logo-2.png": "/ai-web/static/media/ai-logo-2.d6d16fe25c83a91627d9.png",
+    "static/media/1.png": "/ai-web/static/media/1.98b35466443ec793e31f.png",
+    "index.html": "/ai-web/index.html",
+    "main.af4125c4.css.map": "/ai-web/static/css/main.af4125c4.css.map",
+    "main.becaf067.js.map": "/ai-web/static/js/main.becaf067.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af4125c4.css",
+    "static/js/main.becaf067.js"
+  ]
+}
