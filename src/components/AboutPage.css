@@ -1,0 +1,535 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sankofa+Display&display=swap');
+.pricing {
+    width: 100%;
+    padding: 0rem 1rem;
+    background-color: rgb(3, 2, 20);
+    margin-top: 2rem;
+}
+
+.customHeading {
+    display: block;
+    align-items: center;
+    justify-content: center; 
+}
+.customHeading h2, .customHeading h1, .customHeading h3, .customHeading p {
+    color: #eee;
+    font-weight: 100;
+    font-family: 'Roboto', sans-serif;
+    padding:0;
+    text-align: center;
+}
+.customHeading h1 {
+    margin: 0px 0px 50px 0px;
+    font-size: 3.5rem;
+}
+.customHeading h2 {
+    margin: 80px 0px 40px 0px;
+    font-size: 2.5rem;
+}
+.customHeading h3 {
+    margin: 70px 0px 20px 0px;
+    font-size: 2rem;
+}
+.customHeading p {
+    margin: 0px auto 40px auto;
+    font-size: 1rem;
+    max-width: 30%;
+}
+
+.cardContainer, .cardContainer1 {
+    margin: auto;
+    display: grid;
+    align-items: center; 
+}
+
+.cardContainer1 {
+    max-width: 58%;
+    grid-template-rows: repeat(3,1fr);
+    grid-gap: 20px;
+}
+
+.cardContainer {
+    max-width: 70%;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 40px;
+}
+
+.cardContainer .card {
+    border: none;
+    color: #eee;
+}
+
+.cardSliders {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: span 4;
+    padding:0;
+    margin:0;
+}
+
+.cardSlideshow {
+    height: 500px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    padding:0;
+    margin:0;
+}
+
+.slide1 {
+    width: 80px;
+    border-radius: 0.5rem;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    /* the new added styling from the large card */
+    background: linear-gradient(135deg, rgba(13, 15, 27, 0.99), rgba(9, 5, 21, 0.99), rgb(17, 17, 33, 0.99));
+    backdrop-filter: blur(10px);
+    background-blend-mode: overlay;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slide1:hover {
+    background: linear-gradient(135deg, rgba(19, 19, 36, 0.8), rgba(13, 7, 25, 0.675) 43%, rgba(21, 21, 40, 0.8));
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: background 0.5s ease-in-out;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+}
+
+.slide > .row,
+.slide1 > .row {
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.slide > .row > .icon,
+.slide1 > .row > .icon {
+    background: #223;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+.slide > .row > .description,
+.slide1 > .row > .description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 520px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+}
+.description p {
+    color: #b0b0ba;
+    padding-top: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 250;
+}
+.description h4 {
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+#vision, #mission, #goals {
+    display: none;
+}
+#vision:checked + label,
+#mission:checked + label,
+#goals:checked + label {
+    width: 850px;
+}
+#vision:checked + label .description,
+#mission:checked + label .description,
+#goals:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.slide1[for="vision"] {
+    background-image: url('../assets/1.png');
+    background-size: cover;
+}
+.slide1[for="mission"] {
+    background-image: url('../assets/2.png');
+    background-size: cover;
+}
+.slide1[for="goals"] {
+    background-image: url('../assets//3.png');
+    background-size: cover;
+}
+
+/*  the new part is above  */
+
+.largeCard {
+    text-align: center;
+    position: relative;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 270deg;
+    inherits: false;
+}
+.glowingBorder {
+    padding: 0;
+    margin: 0;
+}
+
+.glowingBorder::after, .glowingBorder::before {
+    --angle: 0deg;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    background: conic-gradient(
+        from var(--angle), 
+            rgb(3, 2, 20), 
+            rgb(251, 123, 68),
+            rgb(129, 31, 65), 
+            rgb(125, 69, 236) 43%, 
+            rgb(3, 2, 20),
+            rgb(3, 2, 20),
+            rgb(3, 2, 20),
+            rgb(3, 2, 20),
+            rgb(3, 2, 20),
+            rgb(3, 2, 20)
+        );
+    translate: -50% -50%;
+    border-radius: 20px;
+    animation: 10s spin linear infinite;
+    padding: 0.03rem;
+}
+
+.glowingBorder::before {
+    filter: blur(1.2rem);
+    opacity: 0.2;
+}
+
+.insidelargeCard {
+    grid-column: span 4; /* Spans across all 4 columns to take full width */
+    text-align: center;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(13, 15, 27, 0.99), rgba(9, 5, 21, 0.99), rgb(17, 17, 33, 0.99));
+    backdrop-filter: blur(10px);
+    background-blend-mode: overlay;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #eee;
+    transition: background-color .3s ease, box-shadow 0.3s ease;
+    height: 170px;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+}
+
+.insidelargeCard:hover {
+    background: linear-gradient(135deg, rgba(19, 19, 36, 0.9), rgba(11, 7, 25, 1) 43%, rgb(18, 18, 34, 0.98));
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: background 3s ease-in-out;
+}
+
+.about-wrapper {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center the items */
+    max-width: 90%;
+    margin-left: 3rem;
+    justify-content: space-between; /* Ensure space between items */
+    gap: 2rem; /* Adjust gap as needed for consistent spacing */
+    box-sizing: border-box;
+}
+
+.info-wrapper {
+    margin-left: 1rem; /* Add some space between the letter and the info */
+    text-align: left; /* Align text to the left */
+    box-sizing: border-box;
+}
+
+.about-title, .about-info {
+    align-items: left;
+    margin: 0.5rem;
+}
+.about-title {
+    font-weight:400;
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+.about-info {
+    font-weight:100;
+    font-size: 1rem;
+}
+
+.letter-gradient {
+    flex-shrink: 0; /* Prevents shrinking */
+    line-height: 80px;
+    letter-spacing: -1.44px;
+    background: linear-gradient(to right,  
+                    rgb(92, 111, 254),
+                    rgb(209, 87, 243) 43%,
+                    rgb(250, 143, 108)
+                );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 120% 100%;
+    animation: gradientRotate 5s linear infinite;
+    font-size: 7rem;
+    padding-bottom: 3px;
+    font-family: "Sankofa Display", sans-serif;
+    font-weight: 550;
+    width: 5rem; /* Fixed width to ensure consistent spacing */
+    box-sizing: border-box;
+}
+
+
+@keyframes gradientRotate {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+.card {
+    text-align: center;
+    padding: 1rem;
+}
+
+.card {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 15px; /* Small round edges */
+    background: linear-gradient(135deg, rgba(20, 15, 32, 0.8), rgba(7, 2, 20, 0.8) 43%, rgba(21, 21, 37, 0.8)); /* Gradient background with transparency */
+    backdrop-filter: blur(10px);
+    background-blend-mode: overlay; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    border: none;
+    color: #eee;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    background: linear-gradient(135deg, rgba(19, 19, 36, 0.8), rgba(13, 7, 25, 0.675) 43%, rgba(21, 21, 40, 0.8)); /* Gradient background with transparency */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+    transition: background 0.5s ease-in-out;
+}
+
+.card .btc{
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 0rem;
+}
+
+.pricing h3 {
+    color: #eee;
+    padding: 0.3rem 0 1.3rem;
+    font-size: 1rem;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+}
+
+.pricing p {
+    color: #eee;
+    padding: 0.2rem 0;
+    font-size: 0.9rem;
+    font-weight: 250;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card.btn{
+    display: block;
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.profile-pic {
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Ensure it’s a square for perfect circle */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+    border: 0px solid rgba(255, 255, 255, 0.5); /* Light border to match the frosted glass effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    margin: 0 auto 1.5rem auto; /* Center the image and add some space below */
+    margin-top: 15px;
+    display: block; /* Ensures the image is centered */
+}
+
+@keyframes spin {
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+
+@media (max-width: 1220px) {
+    .slide1 {
+        width: 80px;
+    }
+
+    #vision:checked + label,
+    #mission:checked + label,
+    #goals:checked + label {
+        width: 600px;
+    }
+
+    .slide1 > .row > .description {
+        width: 250px;
+        height: 60px;
+    }
+
+    .slide1 > .row > .icon {
+        width: 40px;
+        height: 40px;
+        font-size: 0.8rem;
+    }
+    .customHeading p {
+        max-width: 40%;
+    }
+
+    .slide > .row > .description,
+    .slide1 > .row > .description {
+        height: 100px;
+    }
+}
+
+@media (max-width: 980px) {
+    .cardContainer, .cardContainer1 {
+        max-width: 90%;
+        margin: auto;
+        grid-template-columns: 1fr;
+    }
+
+    .insidelargeCard {
+        height: 270px;
+    }
+
+    .about-wrapper {
+        margin-left: 3rem;
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center the items horizontally */
+        gap: 0.2rem;
+    }
+
+    .letter-gradient {
+        font-size: 4rem; /* Adjust font size for smaller screens */
+        margin: 0; /* Remove margin on smaller screens */
+    }
+
+    .info-wrapper {
+        margin-left: 0; /* Remove left margin on smaller screens */
+        text-align: center; /* Center text on smaller screens */
+    }
+
+    .slide1 {
+        width: 70px;
+        margin: 0 5px;
+    }
+
+    #vision:checked + label,
+    #mission:checked + label,
+    #goals:checked + label {
+        width: 400px;
+    }
+
+    .slide1 > .row > .description {
+        width: 200px;
+        height: 50px;
+    }
+
+    .slide1 > .row > .icon {
+        width: 30px;
+        height: 30px;
+        font-size: 0.7rem;
+        margin: 10px;
+    }
+
+    .description h4, .description p {
+        font-size: 0.8rem;
+    }
+    .customHeading p {
+        max-width: 50%;
+    }
+
+    
+    .slide > .row > .description,
+    .slide1 > .row > .description {
+        height: 100px;
+    }
+}
+
+@media (max-width: 700px) {
+    .slide1 {
+        width: 60px;
+        margin: 0 5px;
+    }
+
+    .insidelargeCard {
+        height: 320px;
+    }
+
+    #vision:checked + label,
+    #mission:checked + label,
+    #goals:checked + label {
+        width: 300px;
+    }
+
+    .slide1 > .row > .description {
+        width: 200px;
+        height: 50px;
+    }
+
+    .slide1 > .row > .icon {
+        width: 30px;
+        height: 30px;
+        font-size: 0.7rem;
+        margin: 10px;
+    }
+
+    .description h4, .description p {
+        font-size: 0.8rem;
+    }
+
+    .customHeading p {
+        max-width: 70%;
+    }
+
+    .letter-gradient {
+        font-size: 4rem; /* Further adjust font size for very small screens */
+    }
+
+    .info-wrapper {
+        margin-left: 0; /* Ensure margin is removed on very small screens */
+        text-align: center; /* Center text for very small screens */
+    }
+
+    .about-wrapper {
+        margin-left: 2rem;
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center the items horizontally */
+        gap: 0.2rem;
+    }
+
+    .slide > .row > .description,
+    .slide1 > .row > .description {
+        height: 120px;
+    }
+
+}

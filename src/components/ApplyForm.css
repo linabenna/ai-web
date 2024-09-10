@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+label{
+    color: #eee;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: auto;
+    max-width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.success-message {
+    text-align: center;
+    padding: 2rem;
+    background-color: #1b102733;
+    border: 1px solid #000000;
+    color: #5f5d61;
+    border-radius: 8px;
+  }
+  
+  .form-wrapper {
+    border-radius: 15px; /* Small round edges */
+    background: linear-gradient(135deg, rgba(18, 18, 34, 0.8), rgba(7, 2, 20, 0.8) 43%, rgba(21, 21, 37, 0.8)); /* Gradient background with transparency */
+    backdrop-filter: blur(10px);
+    background-blend-mode: overlay; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    border: 0.1px solid rgba(220, 206, 229, 0.152); 
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    max-width: 45%;
+    margin: auto; /* Center horizontally */
+    z-index: -3;
+  }
+  
+  .form label{
+    margin-bottom: 0.9rem;
+    font-size: 16px;
+    font-weight: 50;
+    font-family: 'Calibri', sans-serif;
+  }
+
+  .form input,
+  .form select,
+  .form textarea {
+    width: 100%;
+    padding: 7px 15px;
+    margin-bottom: 1.6rem;
+    border: 0.5px solid #414141;
+    border-radius: 7px;
+    background: linear-gradient(135deg, rgba(23, 21, 37, 0.8), rgba(21, 21, 37, 0.8) 43%, rgba(28, 21, 37, 0.8)); /* Gradient background with transparency */
+    border-color: rgb(255, 255, 255,.1) ;
+    color: #f4f4f4;
+    font: 100 1rem 'Roboto', sans-serif;
+    z-index:0;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin: 2rem 0 0.7rem 0; 
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .button-container label {
+    display: block; 
+    text-align: center; 
+    font-size: 14px; 
+    color: #eee; 
+    margin-bottom: 10px; 
+    max-width: 50%;
+    line-height: 1.5;
+    padding-bottom: 1rem;
+  }
+  
+  .form .btn {
+    text-transform: none;
+    width: auto; /* Ensure button width is auto */
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(32, 32, 81, 0.854), rgba(46, 33, 71, 0.8) 43%, rgba(71, 33, 47, 0.8));
+    color: white;
+    border: 0.1px solid rgba(220, 206, 229, 0.081); 
+    border-radius: 15px;
+    cursor: pointer;
+    font: 300 16px 'Roboto', sans-serif;
+    max-width: 100%; /* Adjust width to 100% of the container if needed */
+    margin: 0;
+    padding: 1rem 3rem 1rem 3rem;
+  }
+  
+  .form .btn:hover {
+    background: linear-gradient(135deg, rgba(36, 36, 137, 0.854), rgba(80, 49, 139, 0.8) 43%, rgba(94, 36, 58, 0.8));
+    font-size: 16px;
+    font-weight: 400;
+    border: 0.5px solid rgba(110, 102, 115, 0.255);
+    transition: background 0.3s ease-in-out, font-size 0.2s ease-in-out;
+  }
+
+  /* Styling the radio group container */
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 5px 0px 30px 0px;
+  }
+
+  /* Styling for each radio option */
+  .radiobuttons {
+    display: flex;
+    align-items: center; /* Ensures the radio button and label align vertically */
+    gap: 17px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    padding:3px;
+    margin:0px 0px 0px 18px;
+  }
+
+  /* Customizing the radio button */
+  input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 0.5px solid #ffffff;
+    cursor: pointer;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  /* Checked radio button styles */
+  input[type="radio"]:checked {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    border: 1.5px solid #ffffff;
+  }
+
+  /* Radio button hover effect */
+  input[type="radio"]:hover{
+    border-color: #ffffff;
+    border: 1px solid #ffffff;
+  }
+
+  /* Label styling */
+  .radiobuttons label {
+    cursor: pointer;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  input[type="radio"]:checked + label {
+    font-weight: 600;
+    background-color: transparent;
+  }
+    
+
+  /* Add a grid layout for Full Name and Email fields */
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px; /* Space between columns */
+    max-width: 100%;
+  }
+
+  .grid-container div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Adjust the width of inputs inside the grid */
+  .grid-container input {
+    width: 100%;
+  }
+
+  @media screen and (max-width:980px){
+    .form-wrapper {
+        max-width: 90%;
+    }
+  }
